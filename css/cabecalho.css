@@ -11,9 +11,9 @@
     justify-content:space-between;
     align-items:center;
 
-    padding:18px 45px;
+    padding:14px 45px;
 
-    background:rgba(7,19,33,.92);
+    background:rgba(7,19,33,.95);
     backdrop-filter:blur(10px);
 
     border-bottom:1px solid rgba(255,255,255,.05);
@@ -24,7 +24,7 @@
 /* LOGO */
 
 .logo{
-    height:52px;
+    height:44px;
 
     filter:
         drop-shadow(0 0 4px rgba(255,255,255,.9))
@@ -32,6 +32,7 @@
         drop-shadow(0 0 18px rgba(255,255,255,.3));
 
     transition:.3s;
+    flex-shrink:0;
 }
 
 .logo:hover{
@@ -41,18 +42,40 @@
         drop-shadow(0 0 24px rgba(255,255,255,.4));
 }
 
+/* BOTÃO HAMBURGUER */
+
+.cabecalho__toggle{
+    display:none;
+    flex-direction:column;
+    justify-content:center;
+    gap:5px;
+    background:none;
+    border:none;
+    cursor:pointer;
+    padding:4px;
+}
+
+.cabecalho__toggle span{
+    display:block;
+    width:24px;
+    height:2px;
+    background:white;
+    border-radius:2px;
+    transition:.3s;
+}
+
 /* MENU */
 
 .cabecalho__menu{
     display:flex;
-    gap:30px;
+    gap:28px;
     list-style:none;
 }
 
 .cabecalho__menu a{
     color:white;
     text-decoration:none;
-    font-size:20px;
+    font-size:17px;
     font-weight:500;
     transition:.3s;
 }
@@ -61,20 +84,87 @@
     color:#53b6ff;
 }
 
-/* RESPONSIVO */
+.cabecalho__menu a.ativo{
+    color:#53b6ff;
+    border-bottom:2px solid #53b6ff;
+    padding-bottom:2px;
+}
+
+/* Header com sombra ao rolar */
+
+.cabecalho.scrollado{
+    box-shadow:0 4px 24px rgba(0,0,0,.4);
+}
+
+/* RESPONSIVO — TABLET / MOBILE */
 
 @media(max-width:900px){
 
     .cabecalho{
-        flex-direction:column;
-        gap:15px;
-        padding:18px 25px;
+        padding:14px 20px;
+        flex-wrap:wrap;
+        align-items:center;
+        gap:0;
+    }
+
+    /* Logo fica à esquerda, toggle colado à direita */
+
+    .logo{
+        flex-shrink:0;
+    }
+
+    .cabecalho__toggle{
+        display:flex;
+        margin-left:auto;
+        flex-shrink:0;
+    }
+
+    /* Nav ocupa linha inteira abaixo do logo+toggle */
+
+    .cabecalho nav{
+        width:100%;
+        overflow:hidden;
     }
 
     .cabecalho__menu{
-        flex-wrap:wrap;
-        justify-content:center;
-        gap:18px;
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        gap:0;
+        padding:0;
+        margin-top:0;
+        border-top:1px solid rgba(255,255,255,.07);
+        max-height:0;
+        overflow:hidden;
+        transition:max-height .35s ease, padding .35s ease;
+    }
+
+    .cabecalho__menu.aberto{
+        max-height:400px;
+        padding:10px 0 14px;
+    }
+
+    .cabecalho__menu li{
+        width:100%;
+        text-align:center;
+    }
+
+    .cabecalho__menu a{
+        display:block;
+        padding:12px 20px;
+        font-size:16px;
+        border-radius:8px;
+    }
+
+    .cabecalho__menu a:hover{
+        background:rgba(83,182,255,.08);
+    }
+
+    .cabecalho__menu a.ativo{
+        color:#53b6ff;
+        border-bottom:none;
+        background:rgba(83,182,255,.1);
+        padding-bottom:0;
     }
 
 }

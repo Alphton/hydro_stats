@@ -21,8 +21,8 @@
 /* LOGO */
 
 .footer__logo{
-    height:55px;
-    margin-bottom:20px;
+    height:50px;
+    margin-bottom:18px;
 
     filter:
         drop-shadow(0 0 4px rgba(255,255,255,.8))
@@ -32,7 +32,7 @@
 /* TÍTULO */
 
 .footer h3{
-    font-size:1.4rem;
+    font-size:1.3rem;
     margin-bottom:12px;
 }
 
@@ -42,7 +42,7 @@
     color:#b9c7d8;
     margin-bottom:8px;
     line-height:1.7;
-    font-size:.95rem;
+    font-size:.92rem;
 }
 
 /* COPYRIGHT */
@@ -50,23 +50,28 @@
 .footer span{
     margin-top:18px;
     color:#7f91a8;
-    font-size:.85rem;
+    font-size:.82rem;
 }
 
 /* RESPONSIVO */
 
-@media(max-width:700px){
+@media(max-width:600px){
 
     .footer{
-        padding:40px 20px;
+        padding:36px 16px;
     }
 
     .footer__logo{
-        height:45px;
+        height:40px;
+        margin-bottom:14px;
     }
 
     .footer h3{
-        font-size:1.2rem;
+        font-size:1.1rem;
+    }
+
+    .footer p{
+        font-size:.87rem;
     }
 
 }
