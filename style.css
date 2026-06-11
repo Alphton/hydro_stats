@@ -62,11 +62,25 @@ body{
 @media(max-width:600px){
 
     .secao{
-        padding:75px 20px;
+        padding:70px 16px;
     }
 
     .secao h2{
-        font-size:1.5rem;
+        font-size:1.35rem;
+        margin-bottom:24px;
+    }
+
+    .secao p{
+        font-size:.97rem;
+        line-height:1.85;
+    }
+
+}
+
+@media(max-width:380px){
+
+    .secao{
+        padding:60px 12px;
     }
 
 }
